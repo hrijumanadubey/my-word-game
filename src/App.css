@@ -1,0 +1,156 @@
+h1 {
+  font-size: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.box {
+  background-color: #121212;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(54, 52, 54);
+  height: 50px;
+  width: 50px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+
+  color: aliceblue;
+  text-align: center;
+  line-height: 50px;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+.correct {
+  background-color: green;
+  color: white;
+  animation: flip360 0.6s ease;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.present {
+  background-color: rgb(216, 186, 12);
+  color: aliceblue;
+  animation: flip360 0.6s ease;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.absent {
+  background-color: rgb(54, 52, 54);
+  color: aliceblue;
+}
+#guess {
+  position: relative;
+  left: 610px;
+  width: 307px;
+  height: 40px;
+  bottom: -50px;
+  border-radius: 5px;
+  font-size: 23px;
+}
+
+.outro {
+  text-align: center;
+  padding: 20px;
+  color: aliceblue;
+  letter-spacing: 3px;
+}
+
+.app-container {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.app-container.visible {
+  opacity: 1;
+}
+@keyframes flip360 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 280px;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  padding: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+body {
+  margin: 0;
+  position: relative;
+  height: 100vh;
+  background-color: black;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("/bgimgtwo.png") center/cover no-repeat;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+@font-face {
+  font-family: "Foneitwu";
+  src: url("/Foneitwu.ttf") format("truetype");
+}
+.afterMath {
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px;
+  border: 20px;
+  margin: 0px;
+}
+.play-again {
+  margin: 10px;
+  padding: 13px;
+  border-radius: 999px;
+  background-color: green;
+  color: white;
+  border: solid;
+  border-color: green;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.play-again:hover {
+  background-color: darkgreen;
+  border-color: darkgreen;
+}
